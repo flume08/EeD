@@ -9,11 +9,39 @@ package Classes;
  * @author carre
  */
 public class Nodo {
-    Nodo next;
-    Object element;
+    private Nodo next;
+    private Object element;
 
     public Nodo(Object element) {
         this.next = null;
+        this.element = element;
+    }
+
+    /**
+     * @return the next
+     */
+    public Nodo getNext() {
+        return next;
+    }
+
+    /**
+     * @param next the next to set
+     */
+    public void setNext(Nodo next) {
+        this.next = next;
+    }
+
+    /**
+     * @return the element
+     */
+    public Object getElement() {
+        return element;
+    }
+
+    /**
+     * @param element the element to set
+     */
+    public void setElement(Object element) {
         this.element = element;
     }
 }
