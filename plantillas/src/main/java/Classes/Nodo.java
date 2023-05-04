@@ -10,7 +10,11 @@ package Classes;
  */
 public class Nodo {
     private Nodo next;
+<<<<<<< HEAD
     private int element;
+=======
+    private Object element;
+>>>>>>> main
 
     public Nodo(int element) {
         this.next = null;
@@ -34,14 +38,22 @@ public class Nodo {
     /**
      * @return the element
      */
+<<<<<<< HEAD
     public int getElement() {
+=======
+    public Object getElement() {
+>>>>>>> main
         return element;
     }
 
     /**
      * @param element the element to set
      */
+<<<<<<< HEAD
     public void setElement(int element) {
+=======
+    public void setElement(Object element) {
+>>>>>>> main
         this.element = element;
     }
 }
