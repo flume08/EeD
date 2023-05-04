@@ -34,7 +34,7 @@ public class List {
     public Nodo last(){
         return this.last;
     }
-    public Object accessElement(int index){
+    public int accessElement(int index){
         if(index> 0 && index <= this.size){
             int i = 0;
             Nodo temp = this.first;
@@ -44,7 +44,7 @@ public class List {
             }
             return temp.getElement();
         }
-        return null;
+        return -1;
     }
     public void insert(int x, Nodo pValor){
         Nodo newNodo = new Nodo(x);
@@ -114,4 +114,16 @@ public class List {
             temp = temp.getNext();        
         } 
     }
-}
+    public int size(){
+        return this.size;
+    }
+    public List revertList(){
+        List revertedList = new List();
+        for(int i= this.size(); i > 0;i--){
+        int x = this.accessElement(i);
+        Nodo temp = new Nodo(x);
+        revertedList.addAtTheEnd(temp);
+        }
+        return revertedList;
+    }
+}    

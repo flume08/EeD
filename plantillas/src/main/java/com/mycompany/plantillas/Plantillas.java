@@ -4,8 +4,8 @@
 
 package com.mycompany.plantillas;
 
-import Classes.List;
-import Classes.Nodo;
+import Classes.ListArray;
+
 
 /**
  *
@@ -13,19 +13,15 @@ import Classes.Nodo;
  */
 public class Plantillas {
     public static void main(String[] args){
-    List mylist = new List();
-    Nodo nodo1 = new Nodo(5);
-    Nodo nodo2 = new Nodo(9);
-    Nodo nodo3 = new Nodo(6);
-    mylist.addAtTheEnd(nodo1);
-    mylist.addAtTheEnd(nodo3);
-    mylist.addAtTheEnd(nodo2);
-    mylist.insert(3,nodo3);
-    mylist.print();
-        System.out.println("------");
-    mylist.delete(nodo3);
-    mylist.print();
-    //mylist.accessElement(2);
-    
+        ListArray myList = new ListArray();
+        myList.insert(10);
+        myList.insert(3);
+        myList.insert(7);
+        myList.insert(21);
+        System.out.println("El primer index es: " + myList.first());
+        System.out.println("El ultimo index es: " +  myList.last());
+        System.out.println(myList.read(2));
+        myList.delete(2);
+        System.out.println(myList.first());
     }
 }
