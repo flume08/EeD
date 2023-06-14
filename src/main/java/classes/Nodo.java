@@ -7,6 +7,7 @@ package classes;
 /**
  *
  * @author carre
+ * @param <T>
  */
 public class Nodo<T> {
     private Nodo next;
