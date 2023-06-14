@@ -11,6 +11,11 @@ package classes;
 public class Nodo<T> {
     private Nodo next;
     private T element;
+    
+     public Nodo(T element) {
+        this.next = null;
+        this.element = element;
+    }
 
     /**
      * @return the next
