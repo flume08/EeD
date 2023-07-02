@@ -45,6 +45,7 @@ package classes;
         Nodo pNew = new Nodo(x);
         pNew.setNext(this.first);
         this.first = pNew;
+        size++;
     }
     
     /**
