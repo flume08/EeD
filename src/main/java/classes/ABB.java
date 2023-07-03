@@ -59,5 +59,60 @@ public class ABB<T> {
             printInOrderHelper(node.getRightSon());
         }
     }
+    
+    public void printPreOrder() {
+        printPreOrderHelper(root);
+    }
+    
+    private void printPreOrderHelper(NodoTree node) {
+        if (node != null) {
+            System.out.print(node.getElement() + " ");
+            printPreOrderHelper(node.getLeftSon());
+            printPreOrderHelper(node.getRightSon());
+        }
+    }
+    
+    public void printPostOrder() {
+        printPostOrderHelper(root);
+    }
+    
+    private void printPostOrderHelper(NodoTree node) {
+        if (node != null) {
+            printPostOrderHelper(node.getLeftSon());
+            printPostOrderHelper(node.getRightSon());
+            System.out.print(node.getElement() + " ");
+        }
+    }
+    
+    public void printLevelOrder() {
+        int height = getHeight(root);
+        for (int i = 1; i <= height; i++) {
+            printLevelHelper(root, i);
+        }
+    }
+    
+    private void printLevelHelper(NodoTree node, int level) {
+        if (node == null) {
+            return;
+        }
+        
+        if (level == 1) {
+            System.out.print(node.getElement() + " ");
+        } else if (level > 1) {
+            printLevelHelper(node.getLeftSon(), level - 1);
+            printLevelHelper(node.getRightSon(), level - 1);
+        }
+    }
+    
+    private int getHeight(NodoTree node) {
+        if (node == null) {
+            return 0;
+        } else {
+            int leftHeight = getHeight(node.getLeftSon());
+            int rightHeight = getHeight(node.getRightSon());
+            
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+    }
 }
 
