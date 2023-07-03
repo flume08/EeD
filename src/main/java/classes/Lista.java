@@ -228,30 +228,35 @@ public class Lista<T> {
         }
         size--;
     }
-    public Nodo deleteIndexN(int index){
-        if (index == 0)
-        {
-            Nodo node = first;
-            this.first = this.first.getNext();
-            size--;
-        return node;}
-        else{
-            Nodo temp = first();
-            int contador = 0;
-            while(contador < index-1)
-            {
-                
-                temp = temp.getNext();
-                contador++;
-            }
-            Nodo node = temp;
+    public Nodo deleteIndexN(int index) {
+    if (index == 0) {
+        Nodo node = first;
+        first = first.getNext();
+        size--;
+        if (size == 0) {
+            last = null;
+        }
+        return node;
+    } else {
+        Nodo temp = first;
+        int contador = 0;
+        while (contador < index - 1 && temp != null) {
+            temp = temp.getNext();
+            contador++;
+        }
+        if (temp != null && temp.getNext() != null) {
+            Nodo node = temp.getNext();
             temp.setNext(temp.getNext().getNext());
-            if (index == size-1){
-                this.last = temp;
+            if (temp.getNext() == null) {
+                last = temp;
             }
             size--;
             return node;
-        }}
+        } else {
+            return null; // El índice está fuera de rango
+        }
+    }
+}
     /**
      * Elimina un nodo específico de la lista.
      * @param pValue El nodo a eliminar.
